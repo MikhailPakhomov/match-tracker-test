@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Tactic';
+    src: url('./fonts/TacticSans-BlkIt.woff2') format('woff2'),
+        url('./fonts/TacticSans-BlkIt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-VariableFont_opsz\,wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@layer base {
+    html {
+        font-family: 'Inter', sans-serif;
+        color: #FFFFFF;
+    }
+
+    body {
+        background-color: #171717;
+    }
+}
+
+@keyframes spin-reverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.animate-spin-reverse {
+    animation: spin-reverse 1s linear infinite;
+}
