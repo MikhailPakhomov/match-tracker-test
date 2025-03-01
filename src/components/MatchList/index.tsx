@@ -1,12 +1,15 @@
 import MatchListItem from "../MatchListItem";
+import { Match } from "../../api/types";
+type TProps = {
+  matches: Match[];
+};
 
-const MatchList = () => {
+const MatchList: React.FC<TProps> = ({ matches }) => {
   return (
     <div className="grid grid-cols-1 gap-3">
-      <MatchListItem />
-      <MatchListItem />
-      <MatchListItem />
-      <MatchListItem />
+      {matches.map((matchInfo: Match, index: number) => (
+        <MatchListItem key={index} {...matchInfo} />
+      ))}
     </div>
   );
 };
